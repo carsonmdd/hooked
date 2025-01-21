@@ -2,13 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 
-import {
-	ClerkProvider,
-	SignInButton,
-	SignedIn,
-	SignedOut,
-	UserButton,
-} from '@clerk/nextjs';
+import { ClerkProvider, UserButton } from '@clerk/nextjs';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { AppSidebar } from './app-sidebar';
 
@@ -40,12 +34,7 @@ export default function RootLayout({
 					className={`${geistSans.variable} ${geistMono.variable} antialiased bg-bg-color text-text-primary dark`}
 				>
 					<header className='flex justify-end'>
-						<SignedOut>
-							<SignInButton />
-						</SignedOut>
-						<SignedIn>
-							<UserButton />
-						</SignedIn>
+						<UserButton />
 					</header>
 					<SidebarProvider>
 						<AppSidebar />
